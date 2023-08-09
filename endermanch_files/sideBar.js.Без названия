@@ -1,0 +1,29 @@
+(() => {
+    let isSidebarShown = false, isMoreShown = false;
+    const revealButton = document.querySelector(".side-panel.is-reveal-button");
+    const sideBar = document.querySelector(".side-panel:not(.is-reveal-button):not(.is-article)");
+
+    //const showMoreButton = document.querySelector(".is-show-more-button");
+
+    revealButton.addEventListener("click", () => (isSidebarShown = !isSidebarShown) ? (sideBar.classList.add("is-article"), revealButton.children[0].innerText = "Hide the sidebar ⬆️") : (sideBar.classList.remove("is-article"), revealButton.children[0].innerText = "Reveal the sidebar ⬇️"));
+    /*showMoreButton.addEventListener("click", () => {
+        if (isMoreShown) {
+            const overflowShownVideos = sideBar.querySelectorAll(".__overflow-hidden");
+            for (const osv of overflowShownVideos) {
+                osv.classList.remove("__overflow-hidden");
+                osv.classList.add("overflow-hidden");
+            }
+            showMoreButton.children[0].innerText = "Show more";
+        } else {
+            const overflowHiddenVideos = sideBar.querySelectorAll(".overflow-hidden");
+
+            for (const ohv of overflowHiddenVideos) {
+                ohv.classList.remove("overflow-hidden");
+                ohv.classList.add("__overflow-hidden");
+            }
+
+            showMoreButton.children[0].innerText = "Show less";
+        }
+        isMoreShown = !isMoreShown;
+    });*/
+})();
